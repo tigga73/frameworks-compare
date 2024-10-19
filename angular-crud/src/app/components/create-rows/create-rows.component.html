@@ -1,0 +1,31 @@
+<div>
+  <h2>Criação de Linhas</h2>
+  <button (click)="createRows()">Criar 10.000 Linhas</button>
+
+  @if (creationTime) {
+    <p>Tempo de criação: {{ creationTime }} ms</p>
+  }
+
+  @if (data.length) {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of data; track row.id) {
+          <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.address }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

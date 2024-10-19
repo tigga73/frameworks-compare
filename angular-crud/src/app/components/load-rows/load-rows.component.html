@@ -1,0 +1,29 @@
+<div>
+  <h2>Carregamento de Linhas</h2>
+  <button (click)="loadRows()">Carregar 1000 Linhas</button>
+  @if (loadingTime) {
+    <p>Tempo de carregamento: {{ loadingTime }} ms</p>
+  }
+  @if (data.length) {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of data; track row.id) {
+          <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.address }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

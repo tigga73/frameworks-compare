@@ -1,0 +1,41 @@
+<div>
+  <h2>Edição de Linha</h2>
+  <button (click)="editRandomRow()">Editar Linha Aleatória</button>
+
+  @if (editTime) {
+    <p>Tempo de edição: {{ editTime }} ms</p>
+  }
+
+  @if (editedRow) {
+    <div>
+      <h4>Linha Editada:</h4>
+      <p><strong>ID:</strong> {{ editedRow.id }}</p>
+      <p><strong>Nome:</strong> {{ editedRow.name }}</p>
+      <p><strong>Email:</strong> {{ editedRow.email }}</p>
+      <p><strong>Endereço:</strong> {{ editedRow.address }}</p>
+    </div>
+  }
+
+  @if (data.length) {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of data; track row.id) {
+          <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.address }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

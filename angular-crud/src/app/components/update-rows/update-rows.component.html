@@ -1,0 +1,31 @@
+<div>
+  <h2>Atualização de Linhas</h2>
+  <button (click)="updateRows()">Atualizar 100 Linhas</button>
+
+  @if (updateTime) {
+    <p>Tempo de atualização: {{ updateTime }} ms</p>
+  }
+
+  @if (data.length) {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of data; track row.id) {
+          <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.address }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
